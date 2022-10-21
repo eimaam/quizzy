@@ -1,0 +1,7 @@
+@import './colors';
+
+@each $key, $val in $colors{
+    .btn-#{$key}{
+        background-color: $val;
+    }
+}

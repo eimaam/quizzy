@@ -1,0 +1,270 @@
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/300.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+.btn-white {
+  background-color: #fff;
+}
+
+.btn-success {
+  background-color: rgb(68, 187, 68);
+}
+
+.btn-info {
+  background-color: yellow;
+}
+
+.btn-danger {
+  background-color: red;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-style: solid;
+  border-color: rgb(255, 222, 250);
+  font-family: "Space Grotesk";
+}
+
+html, body {
+  margin: auto;
+  background-color: rgb(237, 255, 236);
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  color: rgb(39, 39, 42);
+  line-height: 1.6;
+  transition: 700ms ease-in;
+  /* overflow-x: hidden; */
+  word-wrap: break-word;
+  scroll-padding-top: 15vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+div,
+button,
+h1, h2, h3, h4, h5, h6,
+span, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  height: auto;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: inherit;
+  resize: none;
+}
+
+input[type=submit] {
+  font-weight: bolder;
+  border: none;
+  border-radius: 0;
+  font-weight: bold;
+}
+
+button {
+  margin: 1rem auto;
+  background-color: rgb(24, 24, 27);
+  color: #fff;
+  box-shadow: 2px 5px 2px rgb(39, 39, 42);
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+button:hover {
+  transition: 700ms ease-in-out;
+  place-items: center;
+  border-radius: 5px 20px 5px;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+  /* 1 */
+  /* 2 */
+  background-image: none;
+  /* 2 */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+li {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.container > div {
+  width: 50%;
+  margin: auto;
+  background-color: rgb(131, 132, 223);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.container h2 {
+  text-align: justify;
+  color: white;
+  font-size: 1.2rem;
+}
+.container h3 {
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1.6;
+  margin: 1rem auto;
+}
+
+.flex {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flex-col {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav {
+  width: 25%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background-color: rgb(131, 132, 223);
+  float: left;
+  height: 100vh;
+}
+nav div:first-child {
+  text-align: center;
+  color: rgb(255, 222, 250);
+}
+nav img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+nav div:last-child {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+nav div:last-child h2:nth-child(odd) {
+  color: rgb(255, 222, 250);
+  letter-spacing: 1px;
+}
+nav div:last-child h2:nth-child(even) {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgb(255, 222, 250);
+}
+
+.question--card > div {
+  margin: 1.5rem auto;
+  border: 1px solid rgb(255, 222, 250);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.question--card #options {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+.question--card #options div {
+  flex: 1;
+  border: none;
+}
+.question--card #options div h3 {
+  border-radius: 1rem;
+  border: 1px solid rgb(237, 255, 236);
+  padding: 1.2rem 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1.6;
+  background-color: rgb(253, 239, 239);
+  margin: 1rem auto;
+}
+.question--card #options .h3--selected {
+  background-color: green;
+  color: #fff;
+}
+.question--card button {
+  width: 200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgb(255, 222, 250);
+  border-radius: 1rem;
+  padding: 3rem 1rem;
+}
+form input, form select {
+  width: 50%;
+  padding: 1rem;
+}/*# sourceMappingURL=styles.css.map */

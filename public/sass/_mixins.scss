@@ -1,0 +1,50 @@
+@import './variables';
+
+
+@mixin flex($direction: row, $position: center){
+    margin: auto;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $position;
+    align-items: center;
+    gap: 1rem;
+}
+
+@mixin desktopContainer(){
+    width: 100%;
+    margin: auto;
+    // float: right;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    >div{
+        width: 50%;
+        margin: auto;
+        background-color: $bgColor1;
+        padding: 2rem;
+        border-radius: $border-r-1;        
+    }
+
+    // div:first-child{
+    //     margin: 1.5rem auto;
+    //     border: $border;
+    //     border-radius: $border-r-1;
+    //     padding: $p-1;
+    // }
+    
+    h2{
+        text-align: justify;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
+        cursor: pointer;
+        line-height: 1.6;
+        margin: 1rem auto;
+    }
+}

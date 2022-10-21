@@ -1,0 +1,221 @@
+@import './colors';
+@import './variables';
+@import './buttons';
+@import './mixins';
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/300.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+
+
+
+
+// reset
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-style: solid;
+    border-color: $default;
+    font-family: "Space Grotesk";
+}
+
+html, body{
+    margin: auto;
+    background-color: $bgColor;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    color: $primary;
+    line-height: 1.6;
+    transition: 700ms ease-in;
+    /* overflow-x: hidden; */
+    word-wrap: break-word;
+    scroll-padding-top: 15vh;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+}
+div,
+button,
+h1,h2,h3,h4,h5,h6,
+span,p{
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    display: block;
+    height: auto;
+}
+
+input, 
+select,  
+textarea{
+    font-family: inherit;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: inherit;
+    resize: none;
+}
+input[type=submit]{
+    font-weight: bolder;
+    border: none;
+    border-radius: 0;
+    font-weight: bold;
+}
+button{
+    margin: 1rem auto;
+    background-color: $dark;
+    color: $white;
+    box-shadow: 2px 5px 2px  $primary;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    &:hover{
+        transition: 700ms ease-in-out;
+        place-items: center;
+        border-radius: 5px 20px 5px;
+    }
+}
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  /* 2 */
+  background-image: none;  
+  /* 2 */
+  font-weight: bold;
+  cursor: pointer;
+
+}
+li{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+// general
+.container{
+    @include desktopContainer;
+    // background-color: $bgColor1;
+}
+.flex{
+    @include flex;
+}
+.flex-col{
+    @include flex(column);
+}
+// components styling starts here
+nav{
+    width: 25%;
+    @include flex(column, space-between);
+    padding: $p-2 $p-1;
+    background-color: $bgColor1;
+    float: left;
+    height: 100vh;
+
+    div:first-child{
+        text-align: center;
+        color: $default;
+    }
+
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    div:last-child{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h2:nth-child(odd){
+            color: $default;
+            letter-spacing: 1px;
+        }
+
+        h2:nth-child(even){
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-bottom: $border;
+        }
+    }
+
+}
+
+// Question card component
+.question--card{
+    >div{
+        margin: 1.5rem auto;
+        border: $border;
+        border-radius: $border-r-1;
+        padding: $p-1;
+    }
+
+    #options{
+        @include flex();
+        margin: 0;
+
+        div{
+            flex: 1;
+            border: none;
+            
+
+            h3{
+                border-radius: 1rem;
+                border: 1px solid $bgColor;
+                padding: 1.2rem 1.5rem;
+                font-size: 1.2rem;
+                cursor: pointer;
+                line-height: 1.6;
+                background-color: $secondary1;
+                margin: 1rem auto;
+            }
+        }
+
+        .h3--selected{
+            background-color: green;
+            color: $white;
+        }
+    }
+
+    button{
+        width: 200px;
+        @include flex;
+    }
+}
+
+// login component
+form{
+    @include flex(column);
+    border: $border;
+    border-radius: $border-r-1;
+    padding: 3rem 1rem;
+
+    input, select{
+        width: 50%;
+        padding: 1rem;
+    }
+}

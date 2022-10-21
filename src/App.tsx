@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { SideNav } from "./components/SideNav";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { Quiz } from "./components/Quiz";
+import { Login } from "./components/Login";
+import { QuizProvider} from "./components/context/QuizContext";
+import { Prep } from "./components/Prep";
+import { Signup } from "./components/Signup";
+import { DataProvider } from "./components/context/DataContext";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* <SideNav /> */}
+      <DataProvider>
+        <QuizProvider>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/prep" element={<Prep />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+        </QuizProvider>
+      </DataProvider>
+    </Router>
   );
 }
 
