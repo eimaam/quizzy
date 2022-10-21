@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { FaGoogle } from 'react-icons/fa'
 import { useData } from './context/DataContext'
 import { useNavigate } from "react-router-dom"
 
 export const Login = () => {
-  let { url, urlSetting, setUrlSetting, setUrl, setLoading, NoOfQues, category, difficulty, setUsername } = useData()
+  const { setUrl, setLoading, setUsername } = useData()
 
   const navigate = useNavigate()
   
@@ -12,8 +11,7 @@ export const Login = () => {
     username: "",
     category: "",
     difficulty: "",
-    questions: 10,
-
+    questions: "",
   })
 
   const handleChange = (e:React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement> ) => {
@@ -24,33 +22,14 @@ export const Login = () => {
       [name]:value
     }))
     setUsername(data.username)
-    // setUrl(`https://opentdb.com/api.php?amount=${data.questions}&category=${data.category}&difficulty=${data.difficulty}&type=multiple`)
-    setUrlSetting({
-      NoOfQues: data.questions,
-      category: data.category,
-      difficulty: data.difficulty
-    })
-    
-    console.log(data)
-    console.log(url)
   }
+  
 
   const handleSubmit = (e:React.FormEvent<HTMLElement>) => {
     e.preventDefault()
     setLoading(true)
-    NoOfQues = data.questions;
-    category = data.category;
-    difficulty = data.difficulty
-    // setUrl(`https://opentdb.com/api.php?amount=${data.questions}&category=${data.category}&difficulty=${data.difficulty}&type=multiple`)
-    // setUrlSetting((prevData:any) => ({
-    //   ...prevData,
-    //   NoOfQues: data.questions,
-    //   category: data.category,
-    //   difficulty: data.difficulty
-    // }))
-    // console.log(urlSetting)
-    console.log(url)
-    navigate('/prep')
+    setUrl(`https://opentdb.com/api.php?amount=${data.questions}&category=${data.category}&difficulty=${data.difficulty}&type=multiple`)
+    navigate('/quiz')
   }
 
 

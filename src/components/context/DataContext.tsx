@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { createContext } from 'react';
 import { AxiosError } from "axios"
 import {useNavigate} from "react-router-dom"
@@ -26,15 +26,9 @@ export const useData = () => {
 
 export const DataProvider = ({ children }:any) => {
     const navigate = useNavigate()
-    const [urlSetting, setUrlSetting] = useState({
-        NoOfQues: 10,
-        category: 9,
-        difficulty: "easy"
-    })
     
-    // const [url, setUrl] = useState<string>(`https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple`)
-
-    let url = `https://opentdb.com/api.php?amount=${urlSetting.NoOfQues}&category=${urlSetting.category}&difficulty=${urlSetting.difficulty}&type=multiple`;
+    
+    const [url, setUrl] = useState<string>(`https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple`)
 
     const [count, setCount] = useState(0)
     const [score, setScore] = useState(0)
@@ -69,12 +63,10 @@ export const DataProvider = ({ children }:any) => {
         score,
         setScore,
         url,
-        urlSetting,
-        setUrlSetting,
+        setUrl,
         username,
         setUsername,
-        navigate
-
+        navigate,
     }
 
   return (

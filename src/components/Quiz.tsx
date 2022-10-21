@@ -73,11 +73,10 @@ export const Quiz = () => {
 
 
 useEffect(() => {
-  fetchData()
   username === "" && navigate('/')
+  fetchData()
 }, [])
 
-  // let [count, setCount] = useState<number>(0)
   const [selectedOption, setSelectedOption] = useState<any>(null)
 
   // FUNCTIONS
