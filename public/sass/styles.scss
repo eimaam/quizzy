@@ -1,15 +1,5 @@
-@import './colors';
 @import './variables';
-@import './buttons';
 @import './mixins';
-@import "@fontsource/space-grotesk/400.css";
-@import "@fontsource/space-grotesk/300.css";
-@import "@fontsource/space-grotesk/500.css";
-@import "@fontsource/space-grotesk/600.css";
-@import "@fontsource/space-grotesk/700.css";
-
-
-
 
 // reset
 *,
@@ -38,13 +28,14 @@ html, body{
     scroll-padding-top: 15vh;
 }
 
+.dark{
+    
+}
+
 a{
     color: inherit;
     text-decoration: inherit;
     cursor: pointer;
-}
-ul{
-    list-style-type: none;
 }
 div,
 button,
@@ -187,7 +178,7 @@ nav{
                 border-radius: 1rem;
                 border: 1px solid $bgColor;
                 padding: 1.2rem 1.5rem;
-                font-size: 1.2rem;
+                font-size: 1.05rem;
                 cursor: pointer;
                 line-height: 1.6;
                 background-color: $secondary1;

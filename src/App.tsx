@@ -4,6 +4,7 @@ import { Login } from "./components/Login";
 import { QuizProvider} from "./components/context/QuizContext";
 import { Prep } from "./components/Prep";
 import { DataProvider } from "./components/context/DataContext";
+import { QuizEnd } from "./components/QuizEnd";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/prep" element={<Prep />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/final" element={<QuizEnd />} />
         </Routes>
         </QuizProvider>
       </DataProvider>

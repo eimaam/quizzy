@@ -25,7 +25,8 @@
         margin: auto;
         background-color: $bgColor1;
         padding: 2rem;
-        border-radius: $border-r-1;        
+        border-radius: $border-r-1;
+        text-align: center;
     }
 
     // div:first-child{
@@ -36,7 +37,6 @@
     // }
     
     h2{
-        text-align: justify;
         color: white;
         font-size: 1.2rem;
     }

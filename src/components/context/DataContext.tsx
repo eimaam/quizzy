@@ -37,24 +37,40 @@ export const DataProvider = ({ children }:any) => {
     const [username, setUsername] = useState<string>("")
 
 
-    const getData = async () => {
-        setLoading(true)
-        const data:any = await (await axios(url))
-        if(data){
-            setLoading(false)
-        }
-        try{
-            setData(data.data.results);
-        }
-        catch(error){
-            const err = error as AxiosError
-            console.log(err.response?.data)
-        }
+    // const getData = async () => {
+    //     setLoading(true)
+    //     const data:any = await (await axios(url))
+    //     if(data){
+    //         setLoading(false)
+    //     }
+    //     try{
+    //         setData(data.data.results);
+    //     }
+    //     catch(error){
+    //         const err = error as AxiosError
+    //         console.log(err.response?.data)
+    //     }
+    // }
+
+    // function to fetch data
+  const fetchData = async () => {
+    setLoading(true)
+    const data:any = await (await axios(url))
+    if(data){
+        setLoading(false)
     }
+    try{
+        setData(data.data.results);
+    }
+    catch(error){
+        const err = error as AxiosError
+        console.log(err.response?.data)
+    }
+}
     
 
     const value = {
-        getData,
+        fetchData,
         count,
         setCount,
         data,
